@@ -1,4 +1,4 @@
-package com.demo.convert.numbers.facade;
+package com.demo.convert.numbers.service;
 
 import com.demo.convert.numbers.exception.NumberExceptionMessage;
 import com.demo.convert.numbers.exception.NumberRuntimeException;
@@ -6,6 +6,6 @@ import com.demo.convert.numbers.exception.NumberRuntimeException;
 
 public interface WordConverter {
 	
-	String convertToWord(String str) throws NumberExceptionMessage, NumberRuntimeException;
+	String convertToWord() throws NumberExceptionMessage, NumberRuntimeException;
 
 }

@@ -2,7 +2,6 @@ package com.demo.convert.numbers.business.impl;
 
 import com.demo.convert.numbers.business.NumberWordConvertBL;
 import com.demo.convert.numbers.dao.NumberDao;
-import com.demo.convert.numbers.dao.impl.NumberDaoImpl;
 import com.demo.convert.numbers.exception.NumberExceptionMessage;
 import com.demo.convert.numbers.exception.NumberRuntimeException;
 import com.demo.convert.numbers.model.Number;
@@ -20,8 +19,14 @@ public class NumberWordConverBLImpl implements NumberWordConvertBL {
 
 	private NumberDao numberDao; 
 	private Number number;
-	
-	public NumberWordConverBLImpl() {}
+	////////////////////////////////////////////////////////////////
+	// Dependency Injection
+	////////////////////////////////////////////////////////////////
+	public NumberWordConverBLImpl(NumberDao numberDao, Number number) {
+		this.numberDao = numberDao;
+		this.number = number;
+		numberDao.setNumber(number);
+	}
 	
 	public NumberWordConverBLImpl(Number num) {
 		this.number = num;
@@ -74,8 +79,6 @@ public class NumberWordConverBLImpl implements NumberWordConvertBL {
 	//Actual Logic
 	////////////////////////////////////////////////////////////////
 	private String convertToWord(int num) throws NumberExceptionMessage {
-		
-		numberDao = new NumberDaoImpl(this.number);
 		
 		if(num < Constants.ZERO)
 			return ("-" + convertToWord(num));

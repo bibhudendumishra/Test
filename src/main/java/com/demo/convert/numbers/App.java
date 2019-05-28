@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 import com.demo.convert.numbers.exception.NumberExceptionMessage;
 import com.demo.convert.numbers.exception.NumberRuntimeException;
-import com.demo.convert.numbers.facade.WordConverter;
-import com.demo.convert.numbers.facade.impl.WordConverterService;
+import com.demo.convert.numbers.facade.NumberToWordFacade;
 /**
 * Here is the main  . . .
 * 
@@ -22,12 +21,14 @@ public class App
     		while(true) {
 		    	
 				    	System.out.println("Please Enter a Number:");
-				    	
-				    	WordConverter wordConverterService = new WordConverterService();
+				    		
+				    		NumberToWordFacade convertToWord = new NumberToWordFacade();
 					    	System.out.println();
 					    	System.out.println();
 					    	String number = console.nextLine();
-					    	System.out.println(number + " = " + wordConverterService.convertToWord(number));
+					    	System.out.println(number + " = " + convertToWord.ConvertToWording(number));
+					    	System.out.println();
+					    	System.out.println();
 	    	}
 	    
 		}catch(NumberExceptionMessage ex) {

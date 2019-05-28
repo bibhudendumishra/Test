@@ -22,6 +22,10 @@ public class NumberDaoImpl implements NumberDao {
 		super();
 		this.number = number;
 	}
+	
+	public NumberDaoImpl() throws NumberExceptionMessage {
+		super();
+	}
 
 	public Number getNumber() {
 		return number;
