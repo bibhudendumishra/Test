@@ -28,9 +28,6 @@ public class NumberWordConverBLImpl implements NumberWordConvertBL {
 		numberDao.setNumber(number);
 	}
 	
-	public NumberWordConverBLImpl(Number num) {
-		this.number = num;
-	}
 	////////////////////////////////////////////////////////////////
 	//Invoke business Logic to convert into Word - 1
 	////////////////////////////////////////////////////////////////
