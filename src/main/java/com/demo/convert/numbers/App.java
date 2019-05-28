@@ -28,7 +28,6 @@ public class App
 					    	String number = console.nextLine();
 					    	System.out.println(number + " = " + convertToWord.ConvertToWording(number));
 					    	System.out.println();
-					    	System.out.println();
 	    	}
 	    
 		}catch(NumberExceptionMessage ex) {
