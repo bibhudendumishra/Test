@@ -11,6 +11,7 @@ import com.demo.convert.numbers.dao.impl.NumberDaoImpl;
 import com.demo.convert.numbers.exception.NumberExceptionMessage;
 import com.demo.convert.numbers.exception.NumberRuntimeException;
 import com.demo.convert.numbers.model.Number;
+import com.demo.convert.numbers.model.NumberWordMapper;
 
 import junit.framework.Assert;
 
@@ -23,6 +24,9 @@ public class NumberDaoTest {
 	@Mock
 	private Number num ;
 	
+	@Mock
+	NumberWordMapper mapper;
+	
 	@Before
 	public void setup() throws NumberExceptionMessage {
 		MockitoAnnotations.initMocks(this);
@@ -31,12 +35,12 @@ public class NumberDaoTest {
 	@Test
 	 public void DAO_SUCCESS_TEST() throws NumberRuntimeException, NumberExceptionMessage {
 		numDao = new NumberDaoImpl();
-		Assert.assertEquals("One Hundred and twenty three".toUpperCase(), numDao.getNumberToWordMapping(123));
+		Assert.assertEquals("Twelve".toUpperCase(), numDao.getNumberToWordMapping(12));
 	}
 	
 	@Test
 	 public void DAO_SUCCESS_TEST_2() throws NumberRuntimeException, NumberExceptionMessage {
 		numDao = new NumberDaoImpl();
-		Assert.assertEquals("Three Hundred and Forty Five".toUpperCase(), numDao.getNumberToWordMapping(345));
+		Assert.assertEquals("Thirty".toUpperCase(), numDao.getNumberToWordMapping(30));
 	}
 }
